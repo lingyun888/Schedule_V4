@@ -27,7 +27,7 @@ class ResourceUsagePlot:
         ax.set_xticks(range(self.num_links))
         ax.set_yticks(range(self.num_links))
 
-        # 设置 x 轴刻度标籤，并进行旋转和对齐
+        # 设置 x 轴刻度标注，并进行旋转和对齐
         ax.set_xticklabels([f'Time {i + 1}' for i in range(self.num_links)], rotation=45, ha='center')
         ax.set_yticklabels([f'Link {i}' for i in range(self.num_links, 0, -1)], va='center')
 

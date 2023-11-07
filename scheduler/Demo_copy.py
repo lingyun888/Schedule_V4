@@ -57,7 +57,7 @@ class Demo(QGraphicsView):
                 color = self.flow_color_set(packet_data["Flow"])
                 y = list(self.links_dic.keys()).index(link)
 
-                # 沒有衝突狀況發生，正常印出顏色
+                # 沒有冲突状况发生，正常打印出颜色
                 rect = QGraphicsRectItem(time * self.cell_width, y * self.cell_height, 1 * self.cell_width,
                                          1 * self.cell_height)
                 rect.setBrush(QColor(color))
