@@ -16,7 +16,7 @@ class Scheduler:
     def scheduling(self):
         print("\n\n------------------------------")
         print(f"(Scheduler.py)\n")
-        # 將有相同first_Link的flows依據path從小排到大，發生衝突時path較小的可優先被挑選
+        # 将有相同first_Link的flows依据path从小排到大，发生冲突时path较小的可优先被挑选
         init_flows = InitFlowFilter(self.flow_dic, self.flow_paths_dic, self.time_table_maintainer)
         init_flows.init_flows_filter()
         self.fail_flows = self.time_table_maintainer.fail_flows
