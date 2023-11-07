@@ -1,4 +1,4 @@
-# 这边方法採用最笨的排法，也就是依照flow编号排下去，编号前面的优先度较高
+# 这边方法采用最笨的排法，也就是依照flow编号排下去，编号前面的优先度较高
 class ScheduleMiddle:
 
     def __init__(self, flow_dic, flow_paths_dic, time_table_maintainer):
