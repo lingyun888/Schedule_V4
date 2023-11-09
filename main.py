@@ -20,7 +20,9 @@ def main():
     topology = Topology(flow_dic)
     topology.load_links("links.txt")
     topology.create_reverse_links()
-    topology.routing()  # 得到每个flow的路径流向
+
+    # 得到每个flow的路径流向
+    topology.routing()
 
     # 规划排程
     scheduler = Scheduler(topology.flow_dic, topology.links, topology.path_dic)
