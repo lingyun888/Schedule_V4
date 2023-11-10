@@ -1,8 +1,8 @@
 import math
 import copy
-from .InitFlowFilter_copy import InitFlowFilter
-from .ScheduleMiddle_copy import ScheduleMiddle
-from .Timetable import TimeTable
+from scheduler.InitFlowFilter_copy import InitFlowFilter
+from scheduler.ScheduleMiddle_copy import ScheduleMiddle
+from scheduler.Timetable import TimeTable
 
 
 class Scheduler:
