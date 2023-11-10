@@ -17,7 +17,7 @@ class TimeTable:
             elif self.time_table.get(time) is not None:
                 if self.time_table[time].get((path["Ingress"], path["Egress"])) is None:
                     temp_dict[time][(path["Ingress"], path["Egress"])] = flow_packet_dict
-                # 时间已建立path也建立完毕，将会有link_time_collision，先预设排序较后面的flowname优先级较低，需先去除
+                # 时间已建立path也建立完毕，将会有link_time_collision，先预设排序较后面的flow name优先级较低，需先去除
                 else:
                     temp_dict = {}
                     self.fail_flows.append(flow)

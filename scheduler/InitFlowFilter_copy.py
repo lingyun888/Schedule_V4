@@ -10,11 +10,11 @@ class InitFlowFilter:
 
         # 先将时间放入各Flow的path中的first link，并计算path size
         for flow, path in self.flow_paths_dic.items():
-            time_list = self.genarate_time_slot(flow)
+            time_list = self.generate_time_slot(flow)
             self.time_table_maintainer.put_path_and_time_list_to_table(flow, path[0], time_list)
 
     # 加入时间
-    def genarate_time_slot(self, flow):
+    def generate_time_slot(self, flow):
         time_list = {}
         start = self.flow_dic[flow]["StartTime"]
         period = self.flow_dic[flow]["Period"]

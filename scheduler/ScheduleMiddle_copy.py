@@ -11,7 +11,7 @@ class ScheduleMiddle:
         for time in range(0, 101):
 
             if self.time_table.get(time) is not None:
-                # 依据当前时间所佔据在link上的Packets，取得他下一条是哪条link，并排程他近期可以占用的时间
+                # 依据当前时间所占据在link上的Packets，取得他下一条是哪条link，并排程他近期可以占用的时间
                 for link1, packet in self.time_table[time].items():
                     next_link = ()
                     # 取得下一条link
