@@ -30,7 +30,7 @@ class Topology:
 
         # 合并 reverse_links 到 links
         self.links.update(self.reverse_links)
-        # print("\n", self.links)
+        print("\n", self.links)
 
     def routing(self):  # 建立路径(topology.path_dic)
         for flow_id, key in self.flow_dic.items():
@@ -41,7 +41,7 @@ class Topology:
 
         if links_traversed:
             self.path_dic[flow_id] = links_traversed
-            print(f"\nflow = {flow_id}")
+            print(f"\nlinks: , flow = {flow_id}")
             print(f"links = {links_traversed}")
         else:
             print(f"Error: Path not found between {src} and {dst}.")

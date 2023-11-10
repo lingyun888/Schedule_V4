@@ -11,11 +11,11 @@ class TimeTable:
         for time, flow_packet_dict in time_list.items():
             temp_dict[time] = {}
             # 若此时间尚未被建立
-            if self.time_table.get(time) == None:
+            if self.time_table.get(time) is None:
                 temp_dict[time][(path["Ingress"], path["Egress"])] = flow_packet_dict
             # 时间已建立，path尚未建立：无冲突Path问题，直接放置flow_packet
             elif self.time_table.get(time) != None:
-                if self.time_table[time].get((path["Ingress"], path["Egress"])) == None:
+                if self.time_table[time].get((path["Ingress"], path["Egress"])) is None:
                     temp_dict[time][(path["Ingress"], path["Egress"])] = flow_packet_dict
                 # 时间已建立path也建立完毕，将会有link_time_collision，先预设排序较后面的flowname优先级较低，需先去除
                 else:

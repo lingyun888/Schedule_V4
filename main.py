@@ -38,6 +38,8 @@ def main():
     #     print(f"{key}: {value}")
 
     scheduler.scheduling()
+
+    # 窗口结果展示
     app = QApplication(sys.argv)
     view = Demo(topology.links)
 
