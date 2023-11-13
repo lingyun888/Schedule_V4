@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 import sys
+
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication
 from InputFlow import InputFlow
 from scheduler.Scheduler import Scheduler
@@ -42,8 +44,6 @@ def main():
     # 窗口结果展示
     app = QApplication(sys.argv)
     view = Demo(topology.links)
-
-    view.setWindowTitle('CNC调度窗口')
 
     view.show()
     view.update_graphics_from_dict(scheduler.time_table_maintainer.time_table)

@@ -10,10 +10,10 @@ class TimeTable:
 
         for time, flow_packet_dict in time_list.items():
             temp_dict[time] = {}
-            # 若此时间尚未被建立
+            # 若此时间表尚未被建立
             if self.time_table.get(time) is None:
                 temp_dict[time][(path["Ingress"], path["Egress"])] = flow_packet_dict
-            # 时间已建立，path尚未建立：无冲突Path问题，直接放置flow_packet
+            # 时间表已建立，path尚未建立：无冲突Path问题，直接放置flow_packet
             elif self.time_table.get(time) is not None:
                 if self.time_table[time].get((path["Ingress"], path["Egress"])) is None:
                     temp_dict[time][(path["Ingress"], path["Egress"])] = flow_packet_dict
@@ -22,7 +22,7 @@ class TimeTable:
                     temp_dict = {}
                     self.fail_flows.append(flow)
                     break
-
+        # 如果两个流路径无冲突，先把它规划到临时时间表里面，然后通过临时的来更新全局的时间表
         if temp_dict:
             for time in temp_dict.keys():
                 if time in self.time_table:

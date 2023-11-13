@@ -1,7 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QGraphicsView, QGraphicsScene, QGraphicsLineItem, QGraphicsSimpleTextItem, \
     QGraphicsRectItem
-from PyQt5.QtGui import QPen, QColor
+from PyQt5.QtGui import QPen, QColor, QIcon
 from PyQt5.QtCore import QPointF
 import random
 
@@ -20,6 +20,8 @@ class Demo(QGraphicsView):
         self.cell_height = 30
 
         self.grid_line_color = QColor("black")
+        self.setWindowTitle("CNC调度窗口")
+        self.setWindowIcon(QIcon("logo.ico"))  # 没起作用，不知道怎么回事
         self.flow_color = {}
 
         self.draw_grid()

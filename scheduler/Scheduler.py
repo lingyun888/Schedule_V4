@@ -21,10 +21,12 @@ class Scheduler:
         init_flows.init_flows_filter()
         self.fail_flows = self.time_table_maintainer.fail_flows
         print(f"fail flows = {self.fail_flows}\n")
-        # for time, path in self.time_table_maintainer.time_table.items():
-        #     print(f"↓↓↓↓{time}↓↓↓↓")
-        #     for links, packets in path.items():
-        #         print(f"link = {links}, packets = {packets}")
+
+        # 打印时间表
+        for time, path in self.time_table_maintainer.time_table.items():
+            print(f"↓↓↓↓{time}↓↓↓↓")
+            for links, packets in path.items():
+                print(f"link = {links}, packets = {packets}")
         print(f"{self.time_table_maintainer.time_table}")
 
         schedule_middle = ScheduleMiddle(self.flow_dic, self.flow_paths_dic, self.time_table_maintainer)
